@@ -41,6 +41,11 @@ class GameField
 		for ($i = 0; $i < $this->_sizeY; $i++){
 			for ($j = 0; $j < $this->_sizeX; $j++){
 				if ($this->_gameField[$j][$i] instanceof Obstacle){
+					if ($this->_gameField[$j][$i]->getPositionX() == $j &&
+						$this->_gameField[$j][$i]->getPositionY() == $i){
+							unset($this->_gameField[$j][$i]);
+							continue;
+						}
 					echo $this->_gameField[$j][$i]->getType();
 				} else {
 					echo '.';
