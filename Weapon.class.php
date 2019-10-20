@@ -2,18 +2,13 @@
 
 class weapon
 {
-	private $_name;
-	private $_charge = 0;				/*charge point*/
-	private $_Srange = array(0,0);
-	private $_Mrange = array(0,0);
-	private $_Lrange = array(0,0);
-	private $_shootingSide = array('left'=>false, 'right'=>false, 'front'=>false, 'back'=>false);
-	private $_effectZone;
-
-	public function shoot()
-	{
-
-	}
+	public $_name;
+	public $_charge = 0;				/*charge point*/
+	public $_Srange = array(0,0);
+	public $_Mrange = array(0,0);
+	public $_Lrange = array(0,0);
+	public $_shootingSide = array('left'=>false, 'right'=>false, 'front'=>false, 'back'=>false);
+	public $_effectZone;
 
 	public function getShootingSide() {return $this->_shootingSide;}
 
