@@ -44,7 +44,6 @@
 	}
 	#popa
 	{
-
 		margin-left: 10px;
 		box-shadow: 0 0px 5px black;
 	}

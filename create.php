@@ -19,7 +19,9 @@
 		$hpass = hash("whirlpool", $_POST['passwd']);
 		$data[] = array(
 			'login' => $_POST['login'],
-			'passwd' => $hpass
+			'passwd' => $hpass,
+			'aboutme' => "????",
+			'rank' => 'noob'
 		);
 		file_put_contents("../private/passwd", serialize($data));
 		header("Location: index.html");
