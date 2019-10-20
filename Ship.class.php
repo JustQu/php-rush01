@@ -92,6 +92,19 @@ class Ship
 		$this->_weapon = new Weapon("macro_canon");
 	}
 
+	public function		setPosition($x, $y)
+	{
+		$this->_x = $x;
+		$this->_y = $y;
+	}
+
+	public function		setDirection($dir)
+	{
+		if ($dir < 0 || $dir > 3)
+			$dir = 0;
+		$this->_direction = $dir;
+	}
+
 	public function getName() { return $this->_name; }
 	public function getSizeX() { return $this->_sizeX; }
 	public function getSizeY() { return $this->_sizeY; }
