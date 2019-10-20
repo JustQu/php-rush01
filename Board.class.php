@@ -1,5 +1,8 @@
 <?php
 require_once("Obstacle.class.php");
+
+// Array of 100x150 filled with spaces or letters according to debris
+// Implements: ->print_board method
 class Board
 {
 	private $_board = array();

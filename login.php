@@ -5,8 +5,11 @@
 	{
 		if (auth($_POST['login'], $_POST['passwd']))
 		{
-			$_SESSION['loggued_on_user'] = $_POST['login'];
-				header("Location:lobby.html");
+		    if (isset($_SESSION['logged_on_user']))
+            {
+                $_SESSION['logged_on_user'] =  $_POST['login'];
+                header("Location:lobby.html");
+            }
 			return;
 		}
 	}

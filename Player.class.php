@@ -24,6 +24,7 @@ class Player
 				createFleet("destroyer", "destroyer", "terror", "terror", "onslaught", "onslaught");
 				break;
 		}
+
 		placeFleet($position);
 		$this->_fraction = $fraction;
 		$this->_id = uniqid();
@@ -54,7 +55,6 @@ class Player
 				$x -= $ship->getSizeX() + 1;
 		}
 	}
-
 	public function		getShip($index) {
 		return ($this->_spaceShip[$index]);
 	}
