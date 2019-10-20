@@ -8,6 +8,7 @@ class Player
 	private $_fleet = [];
 	private $_fraction;
 	private $_id;
+	public	$activeShip;
 
 	public function		__construct($name, $fleet_set, $_fraction, $position)
 	{
@@ -27,6 +28,7 @@ class Player
 		placeFleet($position);
 		$this->_fraction = $fraction;
 		$this->_id = uniqid();
+		$this->activeShip = 0;
 	}
 
 	private function	createFleet()
@@ -55,8 +57,16 @@ class Player
 		}
 	}
 
+	public function		getFleetSize() {
+		return (count($this->_fleet));
+	}
+
 	public function		getShip($index) {
 		return ($this->_spaceShip[$index]);
+	}
+
+	public function		getNextShip() {
+		return ($this->_spaceShip[$this->activeShip++]);
 	}
 
 	public function		destroyShip($index) {
