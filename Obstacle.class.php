@@ -1,9 +1,7 @@
 <?php
 class Obstacle
 {
-	private $_positionX;
-	private $_positionY;
-	private $_posY;
+	public $posY;
 	private $_posX;
 	private $_sizeX;
 	private $_sizeY;
@@ -42,8 +40,8 @@ class Obstacle
 
 	public function getSizeX() { return $this->_sizeX; }
 	public function getSizeY() { return $this->_sizeY; }
-	public function getPositionX() { return $this->_positionX; }
-	public function getPositionY() { return $this->_positionY; }
+	public function getPosX() { return $this->_posX; }
+	public function getPosY() { return $this->_posY; }
 }
 
 $obstacle = new Obstacle(10, 10);
