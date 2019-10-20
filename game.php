@@ -1,21 +1,38 @@
+<?php
+	
+?>
+
 <html>
-	<table>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="game.js"></script>
+<link href="styles.css" rel="stylesheet" type="text/css"/>	
+<title>Game</title>
+<link rel="icon" type="image/gif" href="https://cdn2.iconfinder.com/data/icons/circle-icons-1/64/rocket-512.png" />
+	<!-- <table> -->
 	<?php
-		for ($i = 0; $i < 100; $i++) {
+		// for ($i = 0; $i < 150; $i++) {
 	?>
-			<tr>
+			<!-- <tr> -->
 	<?php
-			for ($j = 0; $j <150; $j++) {
+			// for ($j = 0; $j < 100; $j++) {
 	?>
-				<td></td>
+				<!-- <td> -->
+				<?php echo str_pad($i.$j, 4); ?>
+				<!-- </td> -->
 	<?php
-			}
+			// }
 	?>
-			</tr>
+			<!-- </tr> -->
 	<?php
-		}
+		// }
+
 	?>
-	</table>
+	<!-- </table> -->
+	<body>
+	<div id="cdiv" style="width:1200px;height:1200px;margin:auto;margin-top:10px;"/>
+	<script>
+	</script>
+	</body>
 </html>
 <?php
 	// require_once("Game.class.php");
@@ -35,4 +52,3 @@
 <?php
 	// 	}
 	// }
-?>

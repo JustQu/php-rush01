@@ -4,6 +4,7 @@ class Obstacle
 	private $_positionX;
 	private $_positionY;
 	private $_posY;
+	private $_posX;
 	private $_sizeX;
 	private $_sizeY;
 	private $_type;

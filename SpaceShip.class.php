@@ -16,9 +16,12 @@ class SpaceShip
 	private $_shield;		/*Number of damage points that a ship can endure before losing his hull points */
 	private $_weapons;		/* List of weapons that ship owns, generally one or two, sometimes more for the really big ships */
 
+	private $_posX;
+	private $_posY;
+	private $_direction;
+
 	public function __construct()
 	{
-
 	}
 
 	public function getName() { return $this->_name; }

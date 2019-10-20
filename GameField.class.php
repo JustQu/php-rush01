@@ -19,7 +19,7 @@ class GameField
 					continue;
 				}
 				if ($this->_gameField[$i][$j] === ' '){
-					if (rand(0, 100) < 1){
+					if (rand(0, 1000) < 3){
 						$this->_gameField[$i][$j] = new Obstacle($i, $j);
 						$width = $this->_gameField[$i][$j]->getSizeX();
 						$height = $this->_gameField[$i][$j]->getSizeY();

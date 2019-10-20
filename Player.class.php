@@ -7,7 +7,7 @@ class Player
 	private $_spaceShips;
 	private $_positionX;
 	private $_positionY;
-	
+	private $_fraction;
 	
 }
 ?>
