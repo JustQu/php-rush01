@@ -1,6 +1,6 @@
 <?php
 
-require_once("SpaceShip.class.php");
+require_once("Ship.class.php");
 
 class Player
 {
@@ -26,7 +26,7 @@ class Player
 				break;
 		}
 
-		placeFleet($position);
+		$this->placeFleet($position);
 		$this->_fraction = $fraction;
 		$this->_id = uniqid();
 		$this->activeShip = 0;

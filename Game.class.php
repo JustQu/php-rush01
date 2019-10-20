@@ -1,4 +1,5 @@
 <?php
+require_once("Player.class.php");
 class Game
 {
     private $_id;
@@ -9,14 +10,15 @@ class Game
 	
 	public function		__construct($kwargs)
 	{
-		$this->_id = md5(random_bytes(32));
+		$this->_id = uniqid();
 		$this->_gameStatus = 0;
 		$this->_board = new Board();
 		$this->_player1 = new Player($kwargs['login1'], $kwargs['faction1'], $kwargs['fleet_set1'], "up");
 		$this->_player2 = new Player($kwargs['login2'], $kwargs['faction2'], $kwargs['fleet_set2'], "down");
 	}
 
-	
+	public function getId() { return $this->_id ;}
+
 	public function		makeTurn()
 	{
 		while (!phaseEnded())

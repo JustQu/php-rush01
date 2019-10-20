@@ -10,8 +10,9 @@ $(document).ready(function(){
 		$.ajax({
 			type: 'POST',
 			url:'game.php',
-			success:function(){
-				window.location.href='game.php';
+			success:function(id){
+				console.log(id);
+				window.location.href='game.php?id='+id;
 			}
 		})
 		return false;

@@ -39,27 +39,30 @@ class Board
 		}
 	}
 
-	public function print_board()
-	{
+	public function get_board(){
+		$array;
 		for ($i = 0; $i < $this->_sizeY; $i++){
 			for ($j = 0; $j < $this->_sizeX; $j++){
 				if ($this->_board[$j][$i] instanceof Obstacle){
-					if ($this->_board[$j][$i]->getPositionX() == $j &&
-						$this->_board[$j][$i]->getPositionY() == $i){
-							unset($this->_board[$j][$i]);
+					if ($this->_board[$j][$i]->getPosX() == $j &&
+						$this->_board[$j][$i]->getPosY() == $i){
+							$obj = array();
+							$obj['posX'] = $this->_board[$j][$i]->getPosX();
+							$obj['posY'] = $this->_board[$j][$i]->getPosY();
+							$obj['sizeX'] = $this->_board[$j][$i]->getSizeX();
+							$obj['sizeY'] = $this->_board[$j][$i]->getSizeY();
+							$obj['type'] = $this->_board[$j][$i]->getType();
+							$array[] = $obj;
+							//$array[$i][$j] = clone $this->_board[$j][$i];
 							continue;
-						}
-					echo $this->_board[$j][$i]->getType();
+					}
+					//echo $this->_board[$j][$i]->getType();
 				} else {
-					echo '.';
+					;
 				}
 			}
-			echo "\n";
 		}
 	}
 }
-
-$field = new Board();
-$field->print_board();
 
 ?>

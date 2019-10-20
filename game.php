@@ -1,6 +1,5 @@
 <?php
 	session_start();
-    if (isset($_GET["active_game"]))
 ?>
 
 <html>
@@ -26,10 +25,17 @@
 	</body>
 </html>
 <?php
-	require_once("GameField.class.php");
-	if (!isset($_GET['game_id'])){
-		//$_SESSION['game'] = new Game(array('login' => $_SESSION['logged_on_user']));
-		$_SESSION['map'] = new GameField();
+	require_once("Board.class.php");
+	require_once("Game.class.php");
+	if (!isset($_GET['id'])){
+		$game = new Game(array('login' => $_SESSION['logged_on_user']));
+		$_SESSION['game'] = serialize($game);
+		$board = new Board();
+		$_SESSION['id'] = $game->getId();
+		$_SESSION['map'] = serialize($board);
+		file_put_contents("d", $_SESSION['map']);
+	} else {
+		;
 	}
 	// require_once("Game.class.php");
 	// if(($_POST['game_id'])){

@@ -1,4 +1,6 @@
 <?php
 	session_start();
-	$_SESSION['map']->get_field();
+	$board = unserialize(file_get_contents("dd"));
+	file_put_contents("dd", $board);
+	echo  $board->get_board();
 ?>
