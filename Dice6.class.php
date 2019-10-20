@@ -1,5 +1,5 @@
 <?php
-class Dice6
+abstract class Dice6
 {
 	// wait for number of throws
 	static function throwDice($kwargs)
