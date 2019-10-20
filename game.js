@@ -9,8 +9,6 @@ $(document).ready(function () {
 	var h = cnv.height ;
 	var span = 8;
 	var img = new Image(64, 64);
-	image.onload = drawImage1;
-	img.src = "https://i.pinimg.com/originals/c5/f9/74/c5f974ac144391a830196f97a9130141.jpg";
 	ctx.beginPath();
 	for (var i = 0; i <= w; i+= span) {
 		for (var j = 0; j <= h; j+= span) {
