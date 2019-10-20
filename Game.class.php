@@ -12,8 +12,7 @@ class Game
 		$this->_id = md5(random_bytes(32));
 		$this->_gameStatus = 0;
 		$this->_board = new Board();
-		$this->_player1 = new Player($kwargs['login1'], $kwargs['faction1'], $kwargs['fleet_set1'], "up");
-		$this->_player2 = new Player($kwargs['login2'], $kwargs['faction2'], $kwargs['fleet_set2'], "down");
+		$this->_player1 = new Player($kwargs['login'], $kwargs['faction'], $kwargs['fleet_set'], "up");
 	}
 
 	
@@ -26,16 +25,16 @@ class Game
 			if ($this->_player2->activeShip < $this->_player2->getFleetSize())
 				giveOrders(2);
 		}
-		while (!phaseEnded())
-		{
-			if ($this->_player1->activeShip < $this->_player1->getFleetSize())
-				executeOrders(1);
-			if ($this->_player2->activeShip < $this->_player2->getFleetSize())
-				executeOrders(2);
-		}
+		// while (!phaseEnded())
+		// {
+		// 	if ($this->_player1->activeShip < $this->_player1->getFleetSize())
+		// 		executeOrders(1);
+		// 	if ($this->_player2->activeShip < $this->_player2->getFleetSize())
+		// 		executeOrders(2);
+		// }
 	}
 	
-	private function	giveOrders($p)
+	private function	giveOrders($p, $order)
 	{
 		if ($p == 1)
 		{
@@ -47,13 +46,24 @@ class Game
 			$ship = $this->_player2->getShip($this->_p2ActiveShip);
 			++$this->_player1->activeShip;
 		}
-	//	do stuff
+		if ($order == "shoot")
+			$ship->shoot();
+		else if ($order == "moveXdown")
+			$ship->setX($ship->getX() + 1);
+		else if ($order == "moveYdown")
+			$ship->setY($ship->getY() + 1);
+		else if ($order == "moveXup")
+			$ship->setY($ship->getY() - 1);
+		else if ($order == "moveYup")
+			$ship->setY($ship->getY() - 1);
+		else if ($order == "repair")
+			$ship->repair();
 	}
 
-	private function	executeOrders()
-	{
-		//do stuff
-	}
+	// private function	executeOrders()
+	// {
+	// 	//do stuff
+	// }
 
 	private function	phaseEnded()
 	{
