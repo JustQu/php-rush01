@@ -9,7 +9,7 @@ class Player
 	private $_fraction;
 	private $_id;
 
-	public function		__construct($name, $fleet_set, $_fraction)
+	public function		__construct($name, $fleet_set, $_fraction, $position)
 	{
 		$this->_name = $name;
 		switch ($fleet_set)
@@ -24,6 +24,8 @@ class Player
 				createFleet("destroyer", "destroyer", "terror", "terror", "onslaught", "onslaught");
 				break;
 		}
+
+		placeFleet($position);
 		$this->_fraction = $fraction;
 		$this->_id = uniqid();
 	}
@@ -35,6 +37,24 @@ class Player
 			$this->_fleet[] = new Ship($ship);
 	}
 
+	private function	placeFleet($position)
+	{
+		if ($position == 'up')
+			$x = $y = 0;
+		else
+		{
+			$x = 148;
+			$y = 90;
+		}
+		foreach ($this->_fleet as $ship)
+		{
+			$ship->setPosition($x, $y);
+			if ($position == "up")
+				$x += $ship->getSizeX() + 1;
+			else
+				$x -= $ship->getSizeX() + 1;
+		}
+	}
 	public function		getShip($index) {
 		return ($this->_spaceShip[$index]);
 	}

@@ -9,6 +9,9 @@ class Game
 
 	public function __construct($kwargs)
 	{
+
+      $this->_id = md5(random_bytes(32));
+      $this->_board = new Board();
 	    if isset($kwargs['login1'], $kwargs['login2'], $kwargs['faction'], $kwargs['fleet_set'])
         {
             $this->_id = md5(random_bytes(32));
@@ -17,6 +20,7 @@ class Game
             $this->_player1 = new Player($kwargs['login1'], $kwargs['faction'], $kwargs['fleet_set'], "up");
             $this->_player2 = new Player($kwargs['login1'], $kwargs['faction'], $kwargs['fleet_set'], "down");
         }
+
 
 	}
 }
