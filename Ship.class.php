@@ -1,6 +1,6 @@
 <?php
 
-class SpaceShip
+class Ship
 {
 	private $_name; 		/* name of the ship */
 	private $_sizeX;		/* width of the ship */
