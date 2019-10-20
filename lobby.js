@@ -5,11 +5,15 @@ $(document).ready(function(){
 		else
 			$('#game_info').hide();
 	});
-});
 
-$('#123').submit(function(){
-	alert('pepa');
-	location.href ='google.com'
-}).done(function(){
-	
-})
+	$('#123').submit(function(){
+		$.ajax({
+			type: 'POST',
+			url:'game.php',
+			success:function(){
+				window.location.href='game.php';
+			}
+		})
+		return false;
+	});
+});
