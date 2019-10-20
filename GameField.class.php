@@ -3,8 +3,8 @@ require_once("Obstacle.class.php");
 class GameField
 {
 	private $_gameField = array();
-	private $_sizeX = 50;
-	private $_sizeY = 50;
+	private $_sizeX = 150;
+	private $_sizeY = 100;
 
 	public function __construct()
 	{
