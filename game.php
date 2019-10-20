@@ -22,9 +22,9 @@
 </html>
 <?php
 	require_once("GameField.class.php");
-	if (isset($_GET['game_id'])){
-		$_SESSION['game'] = new Game(array('login' => $_SESSION['logged_on_user']));
-		$_SESSION['map'] = new Map();
+	if (!isset($_GET['game_id'])){
+		//$_SESSION['game'] = new Game(array('login' => $_SESSION['logged_on_user']));
+		$_SESSION['map'] = new GameField();
 	}
 	// require_once("Game.class.php");
 	// if(($_POST['game_id'])){
