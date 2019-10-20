@@ -5,7 +5,7 @@ require_once("SpaceShip.class.php");
 class Player
 {
 	private $_name;
-	private $_spaceShips = [];
+	private $_fleet = [];
 	private $_fraction;
 	private $_id;
 
@@ -32,7 +32,7 @@ class Player
 	{
 		$args = func_get_arg();
 		foreach ($args as $ship)
-			$this->_spaceShips[] = new Ship($ship);
+			$this->_fleet[] = new Ship($ship);
 	}
 
 	public function		getShip($index) {
