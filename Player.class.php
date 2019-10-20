@@ -25,6 +25,7 @@ class Player
 				createFleet("destroyer", "destroyer", "terror", "terror", "onslaught", "onslaught");
 				break;
 		}
+
 		placeFleet($position);
 		$this->_fraction = $fraction;
 		$this->_id = uniqid();

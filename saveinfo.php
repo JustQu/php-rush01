@@ -5,7 +5,9 @@
 	{
 		if ($val['login'] == $_SESSION['loggued_on_user'])
 		{
-			echo json_encode($val);
+			$val['aboutme'] = $_POST['aboutme'];
+			$data[$key] = $val;
+			file_put_contents("../private/passwd", serialize($data));
 			break;
 		}
 	}

@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
 
 
+=======
+	session_start();
+    if (isset($_GET["active_game"]))
+>>>>>>> a957c638e144b3d197bfd9aa679213551c53251f
 ?>
 
 <html>
