@@ -21,7 +21,7 @@ class Player
 				createFleet("ironclad", "terror", "terror", "onslaught", "onslaught");
 				break;
 			case 3:
-				createFleet("frigate", "frigate", "terror", "terror", "onslaught", "onslaught");
+				createFleet("destroyer", "destroyer", "terror", "terror", "onslaught", "onslaught");
 				break;
 		}
 		$this->_fraction = $fraction;
@@ -32,11 +32,15 @@ class Player
 	{
 		$args = func_get_arg();
 		foreach ($args as $ship)
-			$this->_spaceShips[] = new Spaceship($ship);
+			$this->_spaceShips[] = new Ship($ship);
 	}
 
 	public function		getShip($index) {
 		return ($this->_spaceShip[$index]);
+	}
+
+	public function		destroyShip($index) {
+		array_splice($this->_spaceShips, $index, 1);
 	}
 
 }
