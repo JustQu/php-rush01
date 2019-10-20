@@ -1,3 +1,8 @@
+<?php
+	session_start();
+    if (isset($_GET["active_game"]))
+?>
+
 <html>
 	<head>
 		<style>

@@ -7,6 +7,10 @@ $(function () {
 	var w = cnv.width;
 	var h = cnv.height;
 	var span = 8;
+<<<<<<< HEAD
+=======
+	var img = new Image(64, 64);
+>>>>>>> e17c485f06c1969d61e68b80e4003613c62eb735
 	ctx.beginPath();
 	 for (var i = 0; i <= w; i+= span) {
 		 for (var j = 0; j <= h; j+= span) {

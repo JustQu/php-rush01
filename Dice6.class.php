@@ -15,6 +15,6 @@ abstract class Dice6
 	}
 }
 
-$throws = Dice6::throwDice('5');
+$throws = Dice6::throwDice('2');
 echo "$throws\n";
 ?>
