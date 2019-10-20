@@ -15,6 +15,7 @@ class SpaceShip
 								travel straight this turn if he wants to stay stationery for the next one */
 	private $_shield;		/*Number of damage points that a ship can endure before losing his hull points */
 	private $_weapons;		/* List of weapons that ship owns, generally one or two, sometimes more for the really big ships */
+	private $_stageinnery;
 
 	public function __construct()
 	{
